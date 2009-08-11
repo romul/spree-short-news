@@ -1,0 +1,16 @@
+<% content_for :sidebar do %>
+	<%= render :partial => "shared/taxonomies" %>
+<% end %>
+<h3>Архив новостей за 
+<%= params[:day] ? Russian::strftime(@date, "%d %b %Y") : Russian::strftime(@date, "%B %Y") %>
+</h3>
+<ul class='lastnews'>
+<% for news_item in @news %>
+  <li>
+    <% date = news_item.created_at %>
+    <%= link_to d(date), daily_news_archive_url(date.year, date.month, date.day) %>
+    <h5><%= link_to news_item.title, news_item %></h5>
+    <%= news_item.body[/(.*?\.){0,3}/] %>
+  </li>
+<% end %>  
+</ul>

@@ -1,0 +1,5 @@
+<% content_for :sidebar do %>
+	<%= render :partial => "shared/taxonomies" %>
+<% end %>
+<h3><%= @news_item.title %></h3>
+<%= @news_item.body %>

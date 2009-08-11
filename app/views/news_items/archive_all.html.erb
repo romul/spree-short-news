@@ -1,0 +1,12 @@
+<% content_for :sidebar do %>
+	<%= render :partial => "shared/taxonomies" %>
+<% end %>
+<% if @first.year < @last.year %>
+  <%= print_archive_links(@first.year, @first.month, 12) %>
+  <% (@first.year+1).upto(@last.year-1) do |year| %>
+    <%= print_archive_links(year, 1, 12) %>
+  <% end %>  
+  <%= print_archive_links(@last.year, 1, @last.month) %>
+<% else %>  
+  <%= print_archive_links(@first.year, @first.month, @last.month) %>
+<% end %>
