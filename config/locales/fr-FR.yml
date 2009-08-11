@@ -1,5 +1,6 @@
 fr-FR:
   short_news: "Breves"
+  short_news_description: "Gestion de breves"
   new_short_news: "Ajouter une breve"
   new_news_places: "Ajouter un endroit"
   place: "Endroit"
@@ -9,3 +10,5 @@ fr-FR:
   published_end_at: "Publié jusqu'a"
   identifier: "Identifiant"
   no_end: "Pas de fin"
+  no_news_found: "Aucune news actuellement"
+  filter_by_news_place: "Filtré par"
