@@ -4,13 +4,18 @@ class ShortNewsExtension < Spree::Extension
   url "http://yourwebsite.com/"
 
   def activate
-     Admin::ConfigurationsController.class_eval do
-      before_filter :add_short_news_links, :only => :index
+     Admin::BaseController.class_eval do
+      before_filter :add_short_news_tab
 
-      def add_short_news_links
-        @extension_links << {:link => admin_news_news_items_path, :link_text => t('short_news'), :description => t('short_news_description')}
+      def add_short_news_tab
+        @extension_tabs << [ :news_news_items ]
       end
+    end
+    
+    Spree::BaseController.class_eval do
+       helper :news_items
     end
 
   end
 end
+
