@@ -1,0 +1,11 @@
+<% content_for :sidebar do %>
+	<%= render :partial => "shared/taxonomies" %>
+<% end %>
+<% if @news.length > 0 %>
+  <% @news.each do |news| %>
+    <h3><%= news.published_start_at %> &ndash; <%= link_to truncate(news.title, :length => 30), news %></h3>
+    <%= truncate(news.body, :length => 50 ) %>
+  <% end %>
+<% else %>
+  <h3><%= t('no_news_found') %></h3>
+<% end %>

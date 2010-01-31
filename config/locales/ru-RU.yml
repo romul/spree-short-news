@@ -13,4 +13,6 @@ ru-RU:
   no_news_found: "Не найдено новостей"
   filter_by_news_place: "Фильтровать по месторасположению"
   news_news_items: "Новости"
+  maxlength: "Максимальная длина"
+  all_news: "Все новости"
 

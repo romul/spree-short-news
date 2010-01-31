@@ -2,7 +2,11 @@ class NewsItemsController < Spree::BaseController
   resource_controller
   actions :show
   helper :products
-  
+
+  def index
+    @news = NewsItem.last_news('all', 20)
+  end
+
   def archive
     if params[:day]
       @date = DateTime.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
